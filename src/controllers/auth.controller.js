@@ -63,21 +63,18 @@ export async function getMe(req, res) {
 
     console.log(decoded);
 
+
+
     const user = await userModel.findById(decoded.id);
 
-    if (!user) {
-        return res.status(404).json({
-            message: "User not found"
-        });
+   res.status(200).json({
+    message: "User fetched successfully",
+    user:{
+        username: user.username,
+        email: user.email
     }
+   })
 
-    res.status(200).json({
-        user: {
-            username: user.username,
-            email: user.email,
-            id: user._id
-        }
-    });
 }
 
 export async function login(req, res) {

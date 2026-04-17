@@ -11,11 +11,11 @@ authRouter.post("/register",authController.register);
 /**
  * @route POST /api/auth/login
  */
-authRouter.post("/login", authController.login);
+// authRouter.post("/login", authController.login);
 
 /**
- * @route GET /api/auth/me
+ * @route GET /api/auth/getMe
  */
-authRouter.get("/me", authController.getMe);
+authRouter.get("/getMe", authController.getMe);
 
 export default authRouter;
